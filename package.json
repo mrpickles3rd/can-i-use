@@ -1,0 +1,27 @@
+{
+  "name": "can-i-use",
+  "version": "0.0.1",
+  "description": "Can I Use... Scripts to check JS Features. Starting with ES 2023 and going back.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrpickles3rd/can-i-use.git"
+  },
+  "keywords": [
+    "ES-2023",
+    "can-i-use",
+    "scripts",
+    "test",
+    "es",
+    "ECMAScript"
+  ],
+  "author": "ME!",
+  "license": "SEE LICENSE IN \"LICENSE\"",
+  "bugs": {
+    "url": "https://github.com/mrpickles3rd/can-i-use/issues"
+  },
+  "homepage": "https://github.com/mrpickles3rd/can-i-use#readme"
+}
