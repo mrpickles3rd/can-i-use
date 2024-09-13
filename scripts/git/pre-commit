@@ -1,0 +1,23 @@
+#!/bin/sh
+
+echo ""
+echo "Checking all changes!"
+echo 'Run `git stash [-m "MESSAGE"]` to, only, check staged changes.'
+echo 'Run `git stash pop` to get the changes back again.'
+echo 'Happy Hacking 🚀'
+# # Only check staged commit!
+# stash_commit="$(git stash create)"
+# git reset —-hard
+
+npm run test
+
+# # Was it OK?
+# status=$?
+
+# # Rest the working changes (unstaged work).
+# if [[ -n "${stash_commit}" ]]
+# then git stash apply "${stash_commit}"
+# fi
+
+# # Well, was it OK?
+# exit $status

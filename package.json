@@ -4,7 +4,9 @@
   "description": "Can I Use... Scripts to check JS Features. Starting with ES 2023 and going back.",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
+    "setup": "./scripts/setup.sh",
+    "test": "npm run lint && npm run jest",
+    "jest": "jest",
     "lint": "eslint src/**"
   },
   "repository": {
