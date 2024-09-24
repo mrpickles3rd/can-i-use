@@ -7,7 +7,7 @@
     "setup": "./scripts/setup.sh",
     "start": "node ./server.js",
     "test": "npm run lint && npm run jest",
-    "lint": "eslint src/**",
+    "lint": "eslint src/** --no-warn-ignored",
     "jest": "jest --config=jest.config.js"
   },
   "repository": {

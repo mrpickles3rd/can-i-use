@@ -21,6 +21,9 @@ export default [...compat.extends(
     languageOptions: {
         globals: {
             ...globals.browser,
+            isDeffined: true,
+            isfunction: true,
+            updateDOM: true,
         },
     },
 
