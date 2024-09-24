@@ -6,37 +6,37 @@ var theBasics = [
   {
     name: 'console',
     key: 'log',
-    massage: 'Trying `console.log()` - for `Hello World <):oD` - ',
+    message: 'Trying `console.log()` - for `Hello World <):oD` - ',
     worked: false
   },
   {
     name: 'document',
     key: 'getElementById',
-    massage: 'Trying `document.getElementById()` - for `basic-site-functionality` - ',
+    message: 'Trying `document.getElementById()` - for `basic-site-functionality` - ',
     worked: false
   },
   {
     name: 'document',
     key: 'createElement',
-    massage: 'Trying `document.createElement()` - for `li` - ',
+    message: 'Trying `document.createElement()` - for `li` - ',
     worked: false
   },
   {
     name: 'document',
     key: 'createTextNode',
-    massage: 'Trying `document.createTextNode()` - for `Appended Text?` - ',
+    message: 'Trying `document.createTextNode()` - for `Appended Text?` - ',
     worked: false
   },
   {
     name: '<ELEMENT>',
     key: 'createTextNode',
-    massage: 'Trying `<ELEMENT>.appendChild()` - ',
+    message: 'Trying `<ELEMENT>.appendChild()` - ',
     worked: false
   },
   {
     name: 'for',
     key: 'LOOP',
-    massage: 'Trying `for (;;) {}` - ',
+    message: 'Trying `for (;;) {}` - ',
     worked: false
   }
 ];
@@ -80,8 +80,8 @@ try {
   theBasics[5].worked = true;
 
   for (idx = 0; idx < theBasics.length; idx += 1) {
-    updateDOM(basicSiteUL, theBasics[idx].massage, theBasics[idx].worked);
-    console.log(theBasics[idx].worked, theBasics[idx].massage);
+    updateDOM(basicSiteUL, theBasics[idx].message, theBasics[idx].worked);
+    console.log(theBasics[idx].worked, theBasics[idx].message);
   }
 } catch (error) {
   console.log('Basic tests failed, this may not help you, sorry and good luck :)', error.message, error);
