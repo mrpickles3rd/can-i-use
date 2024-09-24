@@ -11,7 +11,7 @@ function updateDOM(basicSiteUL, text, boolean) {
   );
 }
 
-function isDeffined(api, name) {
+function isDefined(api, name) {
   if (typeof api === 'undefined') {
     throw new Error('OPPS! ' + name + ' is not defined');
   }

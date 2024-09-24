@@ -44,32 +44,32 @@ var theBasics = [
 try {
   var idx;
 
-  isDeffined(console, 'console');
-  isDeffined(console.log, 'console.log');
+  isDefined(console, 'console');
+  isDefined(console.log, 'console.log');
   isfunction(console.log, 'console.log()');
   console.log('Hello World <):oD');
   theBasics[0].worked = true;
 
-  isDeffined(document, 'document');
-  isDeffined(document.getElementById, 'document.getElementById');
+  isDefined(document, 'document');
+  isDefined(document.getElementById, 'document.getElementById');
   isfunction(document.getElementById, 'document.getElementById()');
   var basicSiteUL = document.getElementById('basic-site-functionality'); // Old, but should have the best compatibility for testing.
-  isDeffined(basicSiteUL, 'ELEMENT `basicSiteUL`');
+  isDefined(basicSiteUL, 'ELEMENT `basicSiteUL`');
   theBasics[1].worked = true;
 
-  isDeffined(document.createElement, 'document.createElement');
+  isDefined(document.createElement, 'document.createElement');
   isfunction(document.createElement, 'document.createElement()');
   var listItem = document.createElement('li');
-  isDeffined(listItem, 'ELEMENT `listItem`');
+  isDefined(listItem, 'ELEMENT `listItem`');
   theBasics[2].worked = true;
 
-  isDeffined(document.createTextNode, 'document.createTextNode');
+  isDefined(document.createTextNode, 'document.createTextNode');
   isfunction(document.createTextNode, 'document.createTextNode()');
   var listText = document.createTextNode('Appended Text?');
-  isDeffined(listText, 'ELEMENT `listText`');
+  isDefined(listText, 'ELEMENT `listText`');
   theBasics[3].worked = true;
 
-  isDeffined(basicSiteUL.appendChild, 'ELEMENT `basicSiteUL`.appendChild');
+  isDefined(basicSiteUL.appendChild, 'ELEMENT `basicSiteUL`.appendChild');
   isfunction(basicSiteUL.appendChild, 'ELEMENT `basicSiteUL`.appendChild()');
   basicSiteUL.appendChild(listItem).appendChild(listText);
   theBasics[4].worked = true;
