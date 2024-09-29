@@ -30,5 +30,6 @@ export default [...compat.extends(
     rules: {
         semi: ["warn", "always"],
         "jest/no-identical-title": "error",
+        "max-len": "off",
     },
 }];
