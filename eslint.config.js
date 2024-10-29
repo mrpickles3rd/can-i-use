@@ -26,10 +26,14 @@ export default [...compat.extends(
             updateDOM: true,
         },
     },
-
+    ignores: [
+        "src/Submodules",
+    ],
     rules: {
         semi: ["warn", "always"],
         "jest/no-identical-title": "error",
         "max-len": "off",
+        "semi": "error",
+        "no-console": "off",
     },
 }];
