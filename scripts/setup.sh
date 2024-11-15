@@ -56,3 +56,4 @@ else
   echo "Happy Hacking 👋"
   echo "... and please dont bypass the pre-commit hooks 🙌"
 fi
+

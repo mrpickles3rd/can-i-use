@@ -1,90 +1,124 @@
-/* eslint-disable no-console */
-/* eslint-disable vars-on-top */
 /* eslint-disable comma-dangle */
+/* eslint-disable prefer-template */
+/* eslint-disable vars-on-top */
 /* eslint-disable no-var */
+/* eslint-disable no-unused-expressions */
+
+// eslint-disable-next-line no-unused-vars
 var theBasics = [
   {
     name: 'console',
     key: 'log',
-    message: 'Trying `console.log()` - for `Hello World <):oD` - ',
+    massage: 'Trying `console.log()` - for `Hello World <):oD` - ',
     worked: false
   },
   {
     name: 'document',
     key: 'getElementById',
-    message: 'Trying `document.getElementById()` - for `basic-site-functionality` - ',
+    massage: 'Trying `document.getElementById()` - for `basic-site-functionality` - ',
     worked: false
   },
   {
     name: 'document',
     key: 'createElement',
-    message: 'Trying `document.createElement()` - for `li` - ',
+    massage: 'Trying `document.createElement()` - for `li` - ',
     worked: false
   },
   {
     name: 'document',
     key: 'createTextNode',
-    message: 'Trying `document.createTextNode()` - for `Appended Text?` - ',
+    massage: 'Trying `document.createTextNode()` - for `Appended Text?` - ',
     worked: false
   },
   {
     name: '<ELEMENT>',
     key: 'createTextNode',
-    message: 'Trying `<ELEMENT>.appendChild()` - ',
+    massage: 'Trying `<ELEMENT>.appendChild()` - ',
     worked: false
   },
-  {
-    name: 'for',
-    key: 'LOOP',
-    message: 'Trying `for (;;) {}` - ',
-    worked: false
-  }
 ];
 
-try {
-  var idx;
+var consoleLog = 'Trying `console.log()` - for `Hello World <):oD`';
+var consoleLogWorked = false;
+var getElmByID = 'Trying `document.getElementById()` - for `basic-site-functionality`';
+var getElmByIdWorked = false;
+var createElm = 'Trying `document.createElement()` - for `li`';
+var createElmWorked = false;
+var createTxtNo = 'Trying `document.createTextNode()` - for `Appended Text?`';
+var createTxtNoWorked = false;
+var appendChi = 'Trying `<ELEMENT>.appendChild()`';
+var appendChiWorked = false;
 
-  isDefined(console, 'console');
-  isDefined(console.log, 'console.log');
+function logBasicSiteFunctionality() {
+  console.log(consoleLogWorked, consoleLog);
+  console.log(getElmByIdWorked, getElmByID);
+  console.log(createElmWorked, createElm);
+  console.log(createTxtNoWorked, createTxtNo);
+  console.log(appendChiWorked, appendChi);
+}
+
+function updateDOM(basicSiteUL, text, boolean) {
+  var worked = boolean ? 'TRUE' : 'FALSE ! ! !';
+  basicSiteUL.appendChild(
+    document.createElement('li'),
+  ).appendChild(
+    document.createTextNode(worked + ' -=- ' + text),
+  );
+}
+
+function isDeffined(api, name) {
+  if (typeof api === 'undefined') {
+    throw Error(name + ' is not defined');
+  }
+  return true;
+}
+function isfunction(api, name) {
+  if (typeof api === 'function') {
+    return true;
+  }
+  throw Error(name + ' is not a function');
+}
+
+try {
+  isDeffined(console, 'console');
+  isDeffined(console.log, 'console.log');
   isfunction(console.log, 'console.log()');
   console.log('Hello World <):oD');
-  theBasics[0].worked = true;
+  consoleLogWorked = true;
 
-  isDefined(document, 'document');
-  isDefined(document.getElementById, 'document.getElementById');
+  isDeffined(document, 'document');
+
+  isDeffined(document.getElementById, 'document.getElementById');
   isfunction(document.getElementById, 'document.getElementById()');
   var basicSiteUL = document.getElementById('basic-site-functionality'); // Old, but should have the best compatibility for testing.
-  isDefined(basicSiteUL, 'ELEMENT `basicSiteUL`');
-  theBasics[1].worked = true;
+  isDeffined(basicSiteUL, 'ELEMENT `basicSiteUL`');
+  getElmByIdWorked = true;
 
-  isDefined(document.createElement, 'document.createElement');
+  isDeffined(document.createElement, 'document.createElement');
   isfunction(document.createElement, 'document.createElement()');
   var listItem = document.createElement('li');
-  isDefined(listItem, 'ELEMENT `listItem`');
-  theBasics[2].worked = true;
+  isDeffined(listItem, 'ELEMENT `listItem`');
+  createElmWorked = true;
 
-  isDefined(document.createTextNode, 'document.createTextNode');
+  isDeffined(document.createTextNode, 'document.createTextNode');
   isfunction(document.createTextNode, 'document.createTextNode()');
   var listText = document.createTextNode('Appended Text?');
-  isDefined(listText, 'ELEMENT `listText`');
-  theBasics[3].worked = true;
+  isDeffined(listText, 'ELEMENT `listText`');
+  createTxtNoWorked = true;
 
-  isDefined(basicSiteUL.appendChild, 'ELEMENT `basicSiteUL`.appendChild');
+  isDeffined(basicSiteUL.appendChild, 'ELEMENT `basicSiteUL`.appendChild');
   isfunction(basicSiteUL.appendChild, 'ELEMENT `basicSiteUL`.appendChild()');
   basicSiteUL.appendChild(listItem).appendChild(listText);
-  theBasics[4].worked = true;
+  appendChiWorked = true;
 
-  for (idx = 0; idx < 2; idx += 1) {
-    console.log('Trying `for (var i = 0; i < 2; i += 1) {}` - ', idx);
-  }
-  theBasics[5].worked = true;
-
-  for (idx = 0; idx < theBasics.length; idx += 1) {
-    updateDOM(basicSiteUL, theBasics[idx].message, theBasics[idx].worked);
-    console.log(theBasics[idx].worked, theBasics[idx].message);
-  }
+  updateDOM(basicSiteUL, consoleLog, consoleLogWorked);
+  updateDOM(basicSiteUL, getElmByID, getElmByIdWorked);
+  updateDOM(basicSiteUL, createElm, createElmWorked);
+  updateDOM(basicSiteUL, createTxtNo, createTxtNoWorked);
+  updateDOM(basicSiteUL, appendChi, appendChiWorked);
 } catch (error) {
   console.log('Basic tests failed, this may not help you, sorry and good luck :)', error.message, error);
-  console.log(theBasics);
+  logBasicSiteFunctionality();
   throw error;
 }
+logBasicSiteFunctionality();
