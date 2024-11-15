@@ -21,11 +21,19 @@ export default [...compat.extends(
     languageOptions: {
         globals: {
             ...globals.browser,
+            isDefined: true,
+            isfunction: true,
+            updateDOM: true,
         },
     },
-
+    ignores: [
+        "src/Submodules",
+    ],
     rules: {
         semi: ["warn", "always"],
         "jest/no-identical-title": "error",
+        "max-len": "off",
+        "semi": "error",
+        "no-console": "off",
     },
 }];

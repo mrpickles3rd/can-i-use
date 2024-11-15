@@ -3,11 +3,14 @@
   "version": "0.0.1",
   "description": "Can I Use... Scripts to check JS Features. Starting with ES 2023 and going back.",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "setup": "./scripts/setup.sh",
+    "start": "node ./server.js",
     "test": "npm run lint && npm run jest",
-    "jest": "jest --config=jest.config.js",
-    "lint": "eslint src/**"
+    "lint": "eslint --no-warn-ignored",
+    "jest": "jest",
+    "LAST_SCRIPT": "echo 'Scripts should be in priority order... Setup -> run -> test/commit -> etc.'"
   },
   "repository": {
     "type": "git",
