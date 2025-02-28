@@ -19,12 +19,15 @@ cp ./scripts/git/pre-commit ./.git/hooks/pre-commit
 exit_if_command_failed
 
 echo 'Getting Node version'
-NODE_V=`node -v`
+NODE_V=$(node -v)
 exit_if_command_failed
 
 echo 'Getting .nvmrc version'
-NODE_RC=`cat ./.nvmrc`
+NODE_RC=$(cat ./.nvmrc)
 exit_if_command_failed
+
+echo "Node version found: $NODE_V"
+echo "Node version needed: $NODE_RC"
 
 if [ $NODE_V != $NODE_RC ]
 then
