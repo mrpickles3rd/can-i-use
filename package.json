@@ -10,6 +10,7 @@
     "test": "npm run lint && npm run jest",
     "lint": "eslint --no-warn-ignored",
     "jest": "jest",
+    "update-packages": "npm update ## -> This script has issues with peer dependencies (eslint-config-airbnb-base v15.0.0) ## node ./scripts/update-packages.mjs",
     "LAST_SCRIPT": "echo 'Scripts should be in priority order... Setup -> run -> test/commit -> etc.'"
   },
   "repository": {
